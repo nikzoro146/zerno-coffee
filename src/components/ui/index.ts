@@ -1,2 +1,3 @@
-export { Button } from './Button'
-export { Section } from './Section'
+import { Button } from './Button'
+
+export { Button }

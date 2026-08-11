@@ -6,37 +6,37 @@ import { motion } from "framer-motion";
 const galleryItems = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop",
     alt: "Интерьер кофейни ЗЕРНО",
     span: "row-span-2",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800",
+    src: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop",
     alt: "Чашка свежего кофе",
     span: "",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800",
+    src: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop",
     alt: "Бариста готовит кофе",
     span: "",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800",
+    src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop",
     alt: "Детали интерьера",
     span: "row-span-2",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1517701604599-bb29b5c7fa53?auto=format&fit=crop&q=80&w=800",
+    src: "https://images.unsplash.com/photo-1517701604599-bb29b5c7fa53?q=80&w=800&auto=format&fit=crop",
     alt: "Зерна кофе",
     span: "",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800",
+    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop",
     alt: "Уютный уголок",
     span: "",
   },

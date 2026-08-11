@@ -8,7 +8,7 @@ export const menuItems: MenuItem[] = [
     description: 'Насыщенный вкус с плотной кремовой пенкой',
     price: 150,
     category: 'coffee',
-    image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -17,7 +17,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический итальянский кофе с молочной пенкой',
     price: 220,
     category: 'coffee',
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -26,7 +26,7 @@ export const menuItems: MenuItem[] = [
     description: 'Мягкий кофейный напиток с большим количеством молока',
     price: 240,
     category: 'coffee',
-    image: 'https://images.unsplash.com/photo-1593443320739-7c9063a6e855?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1593443320739-77f749c2c629?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 'raf',
@@ -34,7 +34,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сливочный кофе с ванильным сахаром',
     price: 260,
     category: 'coffee',
-    image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1570968992193-6e5c922c2431?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   // Альтернатива
@@ -44,7 +44,7 @@ export const menuItems: MenuItem[] = [
     description: 'Чистый вкус зерна, заваренный капельным методом',
     price: 180,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1551030173-122f5251b1ca?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 'v60',
@@ -52,7 +52,7 @@ export const menuItems: MenuItem[] = [
     description: 'Японский метод заваривания в воронке Hario V60',
     price: 200,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1542181961-9590d0c79dab?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -61,7 +61,7 @@ export const menuItems: MenuItem[] = [
     description: 'Двойной эспрессо с тонким слоем микропенки',
     price: 250,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1570968992193-6e5c922f5461?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1541167758060-8c8e70d98f57?q=80&w=800&auto=format&fit=crop',
   },
   // Десерты
   {
@@ -70,7 +70,7 @@ export const menuItems: MenuItem[] = [
     description: 'Свежий французский круассан с хрустящей корочкой',
     price: 180,
     category: 'desserts',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1555507036-ab1f40388085?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -79,7 +79,7 @@ export const menuItems: MenuItem[] = [
     description: 'Классический итальянский десерт с маскарпоне',
     price: 320,
     category: 'desserts',
-    image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 'cheesecake',
@@ -87,7 +87,7 @@ export const menuItems: MenuItem[] = [
     description: 'Нежный сливочный чизкейк по традиционному рецепту',
     price: 290,
     category: 'desserts',
-    image: 'https://images.unsplash.com/photo-1533134242116-79c5e60818a7?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=800&auto=format&fit=crop',
   },
   // Завтраки
   {
@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     description: 'Домашние сырники со сметаной и ягодным соусом',
     price: 350,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1562967963-ed7b54990698?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -105,7 +105,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторская гранола с греческим йогуртом и свежими ягодами',
     price: 280,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 'toast',
@@ -113,6 +113,6 @@ export const menuItems: MenuItem[] = [
     description: 'Тост из цельнозернового хлеба с авокадо и яйцом пашот',
     price: 390,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1588137372308-15f75323ca8d?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588137372308-15f75323ca8d?q=80&w=800&auto=format&fit=crop',
   },
 ];

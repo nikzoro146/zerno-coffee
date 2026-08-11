@@ -1,4 +1,6 @@
+export { default as ContactsSection } from './ContactsSection'
 export { Hero } from './Hero'
 export { Benefits } from './Benefits'
 export { MenuSection } from './MenuSection'
 export { GallerySection } from './GallerySection'
+export { default as TestimonialsSection } from './TestimonialsSection'
