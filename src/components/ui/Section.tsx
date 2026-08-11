@@ -1,4 +1,4 @@
-import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react'
+import { forwardRef, ComponentPropsWithoutRef } from 'react'
 import { cn } from '@/utils/cn'
 
 const Section = forwardRef<HTMLElement, ComponentPropsWithoutRef<'section'>>(
