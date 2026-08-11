@@ -36,7 +36,7 @@ const galleryItems = [
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1521017432531-fbd92d7686ff?q=80&w=800&auto=format&fit=crop",
     alt: "Уютный уголок",
     span: "",
   },

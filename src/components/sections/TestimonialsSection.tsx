@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
           {/* Фоновое изображение с затемнением */}
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1600&h=600&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1521017432531-fbd92d7686ff?q=80&w=1600&h=600&auto=format&fit=crop"
               alt="Интерьер кофейни"
               className="w-full h-full object-cover opacity-30"
             />
