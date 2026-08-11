@@ -26,7 +26,7 @@ export const menuItems: MenuItem[] = [
     description: 'Мягкий кофейный напиток с большим количеством молока',
     price: 240,
     category: 'coffee',
-    image: 'https://images.unsplash.com/photo-1593443320739-77f749c2c629?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1593443320739-77f749d7913b?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 'raf',
@@ -34,7 +34,7 @@ export const menuItems: MenuItem[] = [
     description: 'Сливочный кофе с ванильным сахаром',
     price: 260,
     category: 'coffee',
-    image: 'https://images.unsplash.com/photo-1570968992193-6e5c922c2431?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1570968992193-d6ea0c67824f?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   // Альтернатива
@@ -44,7 +44,7 @@ export const menuItems: MenuItem[] = [
     description: 'Чистый вкус зерна, заваренный капельным методом',
     price: 180,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551030173-122f5258cbb3?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 'v60',
@@ -52,7 +52,7 @@ export const menuItems: MenuItem[] = [
     description: 'Японский метод заваривания в воронке Hario V60',
     price: 200,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1542181961-9590d0c79dab?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1544787279-6f9c717d8173?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -61,7 +61,7 @@ export const menuItems: MenuItem[] = [
     description: 'Двойной эспрессо с тонким слоем микропенки',
     price: 250,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1541167758060-8c8e70d98f57?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1576619328658-6e4834a48728?q=80&w=800&auto=format&fit=crop',
   },
   // Десерты
   {
@@ -70,7 +70,7 @@ export const menuItems: MenuItem[] = [
     description: 'Свежий французский круассан с хрустящей корочкой',
     price: 180,
     category: 'desserts',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f40388085?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     description: 'Домашние сырники со сметаной и ягодным соусом',
     price: 350,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1562967963-ed7b54990698?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop',
     popular: true,
   },
   {
@@ -105,7 +105,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторская гранола с греческим йогуртом и свежими ягодами',
     price: 280,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1490474504059-bf6aecce5c27?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 'toast',
