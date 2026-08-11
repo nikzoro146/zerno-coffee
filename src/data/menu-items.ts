@@ -26,7 +26,7 @@ export const menuItems: MenuItem[] = [
     description: 'Мягкий кофейный напиток с большим количеством молока',
     price: 240,
     category: 'coffee',
-    image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 'raf',
@@ -44,7 +44,7 @@ export const menuItems: MenuItem[] = [
     description: 'Чистый вкус зерна, заваренный капельным методом',
     price: 180,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 'v60',
@@ -61,7 +61,7 @@ export const menuItems: MenuItem[] = [
     description: 'Двойной эспрессо с тонким слоем микропенки',
     price: 250,
     category: 'alternative',
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   // Десерты
   {
@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     description: 'Домашние сырники со сметаной и ягодным соусом',
     price: 350,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     popular: true,
   },
   {
@@ -105,7 +105,7 @@ export const menuItems: MenuItem[] = [
     description: 'Авторская гранола с греческим йогуртом и свежими ягодами',
     price: 280,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1654923064926-be7e64267a31?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 'toast',
@@ -113,6 +113,6 @@ export const menuItems: MenuItem[] = [
     description: 'Тост из цельнозернового хлеба с авокадо и яйцом пашот',
     price: 390,
     category: 'breakfast',
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1628556820645-63ba5f90e6a2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
