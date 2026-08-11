@@ -6,6 +6,7 @@ import { Coffee, Croissant, UtensilsCrossed, CupSoda } from 'lucide-react';
 import type { Category } from '@/types/menu';
 import { menuItems } from '@/data/menu-items';
 import { Button } from '@/components/ui/Button';
+import { staggerContainer, fadeUpVariants, scaleImageVariants } from '@/lib/animations';
 
 const categoryIcons: Record<Category, React.ReactNode> = {
   coffee: <Coffee className="w-5 h-5" />,
@@ -21,6 +22,19 @@ const categoryLabels: Record<Category, string> = {
   breakfast: 'Завтраки',
 };
 
+const tabVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: (i: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.4,
+      ease: "easeOut" as const,
+    },
+  }),
+};
+
 export function MenuSection() {
   const [activeCategory, setActiveCategory] = useState<Category>('coffee');
 
@@ -33,10 +47,10 @@ export function MenuSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeUpVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-serif text-[#1C1410] mb-4">
@@ -49,15 +63,19 @@ export function MenuSection() {
 
         {/* Category Tabs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12"
         >
-          {(Object.keys(categoryLabels) as Category[]).map((category) => (
-            <button
+          {(Object.keys(categoryLabels) as Category[]).map((category, index) => (
+            <motion.button
               key={category}
+              custom={index}
+              variants={tabVariants}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory(category)}
               className={`flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
                 activeCategory === category
@@ -67,7 +85,7 @@ export function MenuSection() {
             >
               {categoryIcons[category]}
               <span>{categoryLabels[category]}</span>
-            </button>
+            </motion.button>
           ))}
         </motion.div>
 
@@ -75,32 +93,38 @@ export function MenuSection() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             {filteredItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+                custom={index}
+                variants={fadeUpVariants}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-coffee/10 transition-all duration-500"
               >
                 {/* Image */}
                 <div className="relative h-48 md:h-56 overflow-hidden">
-                  <img
+                  <motion.img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    variants={scaleImageVariants}
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
                   {item.popular && (
-                    <div className="absolute top-3 right-3 bg-[#C67C4E] text-white px-3 py-1 rounded-full text-xs font-medium">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.5 }}
+                      className="absolute top-3 right-3 bg-[#C67C4E] text-white px-3 py-1 rounded-full text-xs font-medium"
+                    >
                       Популярное
-                    </div>
+                    </motion.div>
                   )}
                 </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { staggerContainer, fadeUpVariants, scaleImageVariants } from "@/lib/animations";
 
 // Данные для галереи
 const galleryItems = [
@@ -42,38 +43,16 @@ const galleryItems = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
 export function GallerySection() {
   return (
     <section className="py-24 md:py-32 bg-[#FAF6F0] overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         {/* Заголовок секции */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeUpVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16 md:mb-24"
         >
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1C1410] mb-6">
@@ -87,7 +66,7 @@ export function GallerySection() {
 
         {/* Сетка галереи */}
         <motion.div
-          variants={containerVariants}
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -96,16 +75,18 @@ export function GallerySection() {
           {galleryItems.map((item) => (
             <motion.div
               key={item.id}
-              variants={itemVariants}
+              variants={fadeUpVariants}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
               className={`relative group overflow-hidden rounded-xl ${item.span} cursor-pointer`}
             >
               {/* Изображение */}
               <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-              <img
+              <motion.img
                 src={item.src}
                 alt={item.alt}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                variants={scaleImageVariants}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "https://placehold.co/800x800/FAF6F0/1C1410?text=Photo";
                 }}
@@ -113,13 +94,16 @@ export function GallerySection() {
               
               {/* Оверлей при наведении */}
               <div className="absolute inset-0 bg-[#1C1410]/0 group-hover:bg-[#1C1410]/40 transition-colors duration-500 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                  <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
-                    <span className="font-medium text-[#1C1410] text-sm tracking-wide">
-                      {item.alt}
-                    </span>
-                  </div>
-                </div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg"
+                >
+                  <span className="font-medium text-[#1C1410] text-sm tracking-wide">
+                    {item.alt}
+                  </span>
+                </motion.div>
               </div>
 
               {/* Декоративная рамка */}
@@ -130,13 +114,17 @@ export function GallerySection() {
 
         {/* Кнопка "Больше фото" (опционально) */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          variants={fadeUpVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
           className="text-center mt-12"
         >
-          <button className="group relative inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-[#1C1410] text-[#1C1410] rounded-full hover:bg-[#1C1410] hover:text-[#FAF6F0] transition-all duration-300 font-medium">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative inline-flex items-center gap-2 px-8 py-3 bg-transparent border border-[#1C1410] text-[#1C1410] rounded-full hover:bg-[#1C1410] hover:text-[#FAF6F0] transition-all duration-300 font-medium"
+          >
             <span>Смотреть в Instagram</span>
             <svg 
               className="w-4 h-4 transform group-hover:rotate-45 transition-transform duration-300" 
@@ -146,7 +134,7 @@ export function GallerySection() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </motion.button>
         </motion.div>
       </div>
     </section>

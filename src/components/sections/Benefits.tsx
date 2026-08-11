@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Coffee, Wheat, Dog, Wifi } from 'lucide-react'
+import { Coffee, Wheat, Wifi, Dog } from 'lucide-react'
+import { staggerContainer, fadeUpVariants } from '@/lib/animations'
 
 const benefits = [
   {
@@ -26,38 +27,16 @@ const benefits = [
   },
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  },
-}
-
 export function Benefits() {
   return (
     <section id="about" className="py-20 md:py-32 bg-cream">
       <div className="container mx-auto px-4 md:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeUpVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-16 md:mb-20"
         >
           <span className="inline-block text-caramel font-medium text-sm uppercase tracking-widest mb-4">
@@ -74,7 +53,7 @@ export function Benefits() {
 
         {/* Benefits Grid */}
         <motion.div
-          variants={containerVariants}
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
@@ -83,7 +62,8 @@ export function Benefits() {
           {benefits.map((benefit) => (
             <motion.div
               key={benefit.title}
-              variants={itemVariants}
+              variants={fadeUpVariants}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="group p-8 rounded-2xl bg-white border border-coffee/5 hover:border-caramel/20 transition-all duration-500 hover:shadow-xl hover:shadow-coffee/5"
             >
               {/* Icon */}
