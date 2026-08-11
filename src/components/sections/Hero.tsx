@@ -10,6 +10,32 @@ export function Hero() {
   const y2 = useTransform(scrollY, [0, 500], [0, -150])
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
 
+  const handleScrollToMenu = () => {
+    const targetElement = document.getElementById('menu')
+    if (targetElement) {
+      // @ts-ignore
+      if (window.lenis) {
+        // @ts-ignore
+        window.lenis.scrollTo(targetElement, { offset: -80 })
+      } else {
+        targetElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
+  const handleScrollToBooking = () => {
+    const targetElement = document.getElementById('booking')
+    if (targetElement) {
+      // @ts-ignore
+      if (window.lenis) {
+        // @ts-ignore
+        window.lenis.scrollTo(targetElement, { offset: -80 })
+      } else {
+        targetElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cream">
       {/* Background Pattern */}
@@ -83,11 +109,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button size="lg" asChild>
-              <a href="#menu">Смотреть меню</a>
+            <Button size="lg" onClick={handleScrollToMenu}>
+              Смотреть меню
             </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="#booking">Забронировать столик</a>
+            <Button variant="outline" size="lg" onClick={handleScrollToBooking}>
+              Забронировать столик
             </Button>
           </motion.div>
         </div>

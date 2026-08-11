@@ -1,8 +1,14 @@
 import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react'
 import { cn } from '@/utils/cn'
 
-const Button = forwardRef<HTMLButtonElement, ComponentPropsWithoutRef<'button'>>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
+interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+  variant?: 'default' | 'secondary' | 'outline' | 'ghost' | 'link'
+  size?: 'default' | 'sm' | 'lg' | 'icon'
+  asChild?: boolean
+}
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = 'default', size = 'default', asChild, ...props }, ref) => {
     const variants = {
       default: 'bg-coffee text-cream hover:bg-coffee-light shadow-lg',
       secondary: 'bg-caramel text-white hover:bg-caramel-light shadow-md',

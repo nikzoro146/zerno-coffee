@@ -1,5 +1,5 @@
 import { Navbar } from '@/components/layout'
-import { Hero } from '@/components/sections'
+import { Hero, Benefits } from '@/components/sections'
 import { useLenis } from '@/hooks/useLenis'
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
     <main className="relative">
       <Navbar />
       <Hero />
+      <Benefits />
     </main>
   )
 }

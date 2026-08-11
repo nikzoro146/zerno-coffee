@@ -14,6 +14,26 @@ const navLinks = [
   { href: '#contacts', label: 'Контакты' },
 ]
 
+function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  e.preventDefault()
+  
+  // @ts-ignore - lenis is attached to window
+  if (window.lenis) {
+    const targetId = href.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      // @ts-ignore
+      window.lenis.scrollTo(targetElement, { offset: -80 })
+    }
+  } else {
+    const targetId = href.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+}
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -23,7 +43,7 @@ export function Navbar() {
       setIsScrolled(window.scrollY > 50)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -62,6 +82,7 @@ export function Navbar() {
                 <motion.a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-coffee/70 hover:text-coffee font-medium text-sm transition-colors relative group"
                   whileHover={{ y: -2 }}
                 >
@@ -73,8 +94,23 @@ export function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button size="sm" asChild>
-                <a href="#booking">Забронировать</a>
+              <Button 
+                size="sm" 
+                onClick={(e) => {
+                  e.preventDefault()
+                  const targetElement = document.getElementById('booking')
+                  if (targetElement) {
+                    // @ts-ignore
+                    if (window.lenis) {
+                      // @ts-ignore
+                      window.lenis.scrollTo(targetElement, { offset: -80 })
+                    } else {
+                      targetElement.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }
+                }}
+              >
+                Забронировать
               </Button>
             </div>
 
@@ -82,6 +118,7 @@ export function Navbar() {
             <button
               className="md:hidden p-2 text-coffee"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -112,7 +149,10 @@ export function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="text-2xl font-display font-medium text-coffee py-2 border-b border-coffee/10"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleNavClick(e, link.href)
+                    setIsMobileMenuOpen(false)
+                  }}
                 >
                   {link.label}
                 </motion.a>
@@ -123,8 +163,23 @@ export function Navbar() {
                 transition={{ delay: 0.5 }}
                 className="pt-4"
               >
-                <Button className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                  <a href="#booking">Забронировать столик</a>
+                <Button 
+                  className="w-full" 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    const targetElement = document.getElementById('booking')
+                    if (targetElement) {
+                      // @ts-ignore
+                      if (window.lenis) {
+                        // @ts-ignore
+                        window.lenis.scrollTo(targetElement, { offset: -80 })
+                      } else {
+                        targetElement.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }
+                  }}
+                >
+                  Забронировать столик
                 </Button>
               </motion.div>
             </div>

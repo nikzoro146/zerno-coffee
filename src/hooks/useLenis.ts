@@ -1,9 +1,13 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 
+let lenisInstance: Lenis | null = null
+
 export function useLenis() {
   useEffect(() => {
-    const lenis = new Lenis({
+    if (lenisInstance) return
+
+    lenisInstance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
@@ -16,17 +20,22 @@ export function useLenis() {
     })
 
     function raf(time: number) {
-      lenis.raf(time)
+      if (lenisInstance) {
+        lenisInstance.raf(time)
+      }
       requestAnimationFrame(raf)
     }
 
     requestAnimationFrame(raf)
 
     // @ts-ignore
-    window.lenis = lenis
+    window.lenis = lenisInstance
 
     return () => {
-      lenis.destroy()
+      if (lenisInstance) {
+        lenisInstance.destroy()
+        lenisInstance = null
+      }
     }
   }, [])
 }
