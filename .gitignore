@@ -2,49 +2,68 @@
 # Dependencies
 node_modules/
 
-# Build artifacts
+# Build outputs
 dist/
 build/
-*.o
-*.obj
-*.pyc
-__pycache__/
+target/
 
-# Vite specific
-.vite/
-
-# Environment variables
+# Environment
 .env
 .env.local
 .env.*
 
-# IDE and editor files
+# Cache
+.cache/
+.node_cache/
+.npm/
+.yarn/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor
 .vscode/
 .idea/
 *.swp
 *.swo
 *.tmp
 
-# Logs
-*.log
+# Python (if present)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+.env
 
-# Coverage reports
-coverage/
-htmlcov/
-.coverage
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Package manager lock files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# TypeScript
+# TypeScript/JavaScript
 *.tsbuildinfo
 .next/
 .nuxt/
-.vuepress/dist/
+public/dist/
+
+# Coverage
+coverage/
+.nyc_output/
+istanbul/
+*.lcov
+
+# Testing
+.mocha-chrome/
+.chromium-cache/
+
+# Vite specific
+!.vite/
+vite.config.ts
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 ```
